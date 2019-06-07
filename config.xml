@@ -1,0 +1,26 @@
+<root>
+<SourceSystem Name="MySQL">
+	<Account SQL="SELECT * FROM account where accountid = ">
+	
+		<Attribute SourceType="String" TargetType="String" SourceName="name" TargetName="Account"></Attribute>
+		<Attribute SourceType="String" TargetType="INT" SourceName="accountid" TargetName="Account_ID"></Attribute>
+		<Attribute SourceType="INT" TargetType="String" SourceName="updated" TargetName="Updated_Date"></Attribute>
+		<ChildEntity_Contact SQL="SELECT * from contact  where accountid = ">
+		
+			<Attribute SourceType="String" TargetType="INT" SourceName="contactid" TargetName="Contact_ID"></Attribute>
+			<Attribute SourceType="String" TargetType="INT" SourceName="accountid" TargetName="Account_ID"></Attribute>
+			<Attribute SourceType="INT" TargetType="String" SourceName="fn" TargetName="FirstName"></Attribute>
+			<Attribute SourceType="INT" TargetType="String" SourceName="ln" TargetName="LastName"></Attribute>
+			<Attribute SourceType="INT" TargetType="String" SourceName="updated" TargetName="Updated_Date"></Attribute>
+		</ChildEntity_Contact>
+		<ChildEntity_Address SQL="SELECT * from address  where contactid = ">
+		
+			<Attribute SourceType="String" TargetType="INT" SourceName="addressid" TargetName="Address_ID"></Attribute>
+			<Attribute SourceType="String" TargetType="INT" SourceName="accountid" TargetName="Account_ID"></Attribute>
+			<Attribute SourceType="String" TargetType="INT" SourceName="contactid" TargetName="Contact_ID"></Attribute>
+			<Attribute SourceType="String" TargetType="String" SourceName="city" TargetName="City"></Attribute>
+			<Attribute SourceType="INT" TargetType="String" SourceName="updated" TargetName="Updated_Date"></Attribute>
+		</ChildEntity_Address>
+	</Account>
+</SourceSystem>	
+</root>
